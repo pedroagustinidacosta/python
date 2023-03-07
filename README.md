@@ -2,6 +2,10 @@
 README
 Este projeto foi desenvolvido utilizando Python com Django e utiliza uma conexão MySQL local via WampServer no localhost.
 
+
+O projeto consiste em um sistema para gerenciamento de apartamentos e os alugueis do mesmos. Porém devido ao tempo curto, não consegui desenvolver e aprimorar o código da aplicação
+
+
 Configurações do ambiente
 Instalação do Python
 Primeiramente, certifique-se de ter o Python instalado em sua máquina. Caso você não tenha o Python instalado, você pode baixá-lo em python.org.
