@@ -1,0 +1,16 @@
+<ul class="menu">
+
+    <li title="Usuário"><a href="#" class="menu-button about">Usuário</a></li>
+    <li title="Listar alugueis"><a href="/alugueis/" class="home">Listar locações</a></li>
+    {% if request.user.is_superuser %}
+    <li title="Cadastrar"><a href="/cadastros/" class="pencil">Cadastrar</a></li>
+    {% endif %}
+</ul>
+
+
+<ul class="menu-bar">
+    <li><a href="#" class="menu-button">Usuário</a></li>
+    <li><a href="/alugueis/">Inicio</a></li>
+    <li><a href="/changePassword/">Trocar senha</a></li>
+    <li><a href="/logout/">Sair</a></li>
+</ul>

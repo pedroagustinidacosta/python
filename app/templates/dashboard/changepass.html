@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% include "menu.html" %}
+
+<form name="formPainel" id="formPainel" method="post" action="/changePass/">
+  <div class="col-6 mt-4 m-auto">
+    {% if msg %}
+      <div class="alert {{class}}">
+        {{msg}}
+      </div>
+    {% endif %}
+    {% csrf_token %}
+
+    <input class="form-control mt-4" type="password" name="oldpassword" id="oldpassword" placeholder="Senha antiga: ">
+    <input class="form-control mt-4" type="password" name="newpassword" id="newpassword" placeholder="Senha nova: ">
+    <input class="btn btn-dark mt-4" type="submit" value="Trocar senha">
+
+  </div>
+</form>
+    {% else %}
+        Você não tem acesso a essa área
+    {% endif %}
+
+{% endblock %}

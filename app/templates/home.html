@@ -1,0 +1,17 @@
+
+{% extends 'main.html' %}
+{% if request.user.is_authenticated %}
+
+{% endif %}
+{% block content %}
+
+<div class="navbar-brand" align="center">
+  <div>
+    <button class="btn btn-dark mt-4" onclick="window.location.href = '/login/'">Entre</button>
+  </div>
+  <div >
+    <button class="btn btn-dark mt-4" onclick="window.location.href = '/signup/'">Cadastre-se</button>
+  </div>
+</div>
+
+{% endblock %}

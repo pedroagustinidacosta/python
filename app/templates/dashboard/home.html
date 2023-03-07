@@ -1,0 +1,107 @@
+{% extends 'main.html' %}
+{% block content %}
+{% if request.user.is_authenticated %}
+{% include "menu.html" %}
+<style>
+
+
+
+.container {
+	position: fixed;
+	top: 45%;
+	left: 65%;
+	transform: translate(-50%, -50%);
+
+}
+
+table {
+	width: 800px;
+	margin-top: 5%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px #212529;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: #212529;
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+
+
+thead {
+	th {
+		background-color: #212529;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: #212529;
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: #212529;
+				z-index: -1;
+			}
+		}
+	}
+}
+
+</style>
+<header>
+
+    <h1 style="position:absolute ; left: 25%">Aluguel</h1>
+
+</header>
+
+
+<div class="container" >
+
+
+  <table>
+    <thead>
+			<tr>
+				<th>Locador</th>
+				<th>Apartamento</th>
+				<th>Data Inicio</th>
+				<th>Data Fim</th>
+                <th>Preco</th>
+                <th>Edificio</th>
+			</tr>
+		</thead>
+        <tbody>
+			{% for rental in rentals %}
+			<tr>
+				<td>{{ rental.locador.nome }}</td>
+				<td>{{ rental.apartamento.numero }}</td>
+				<td>{{ rental.data_inicio }}</td>
+				<td>{{ rental.data_fim }}</td>
+                <td>{{ rental.apartamento.preco}}</td>
+                <td>{{ rental.apartamento.edificio.nome}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+  </table>
+</div>
+{% else %}
+Você não tem acesso a essa área
+{% endif %}
+{% endblock %}
+
