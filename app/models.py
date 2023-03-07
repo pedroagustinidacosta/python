@@ -16,7 +16,7 @@ class Building(models.Model):
 class Renter(models.Model):
     nome = models.CharField(max_length=100)
     email = models.EmailField()
-    data_nascimento = models.DateField()
+    data_nascimento = models.DateField(null=True, blank=True)
     altura = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     peso = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
 
